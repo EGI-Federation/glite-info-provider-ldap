@@ -263,7 +263,7 @@ foreach(@urls){
 		    $bind = "GLUE2DomainId=$site,o=glue";
 	        }
             }
-	    $filter = ''
+	    $filter = "'(!(|(objectClass=GLUE2ApplicationEnvironment)(objectClass=GLUE2Activity)))'"
 	}else{
 	    $bind = $4;
 	}
