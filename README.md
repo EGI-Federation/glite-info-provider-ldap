@@ -55,7 +55,7 @@ The DEB will be available into the `build/` directory.
   - Updating version and changelog in `debian/changelog`
   - Updating authors in `AUTHORS`
 - Once the PR has been merged tag and release a new version in GitHub
-  - Packages will be built using Travis and attached to the release page
+  - Packages will be built using GitHub Actions and attached to the release page
 
 ## History
 
