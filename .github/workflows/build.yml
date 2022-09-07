@@ -49,7 +49,6 @@ jobs:
           path: |
             build/RPMS/noarch/glite-info-provider-ldap-*-1.el8.noarch.rpm
 
-  # XXX BDII dependency taken from EPEL: glue-schema
   centos7-install:
     name: Install CentOS 7 rpms
     needs: centos7
@@ -61,11 +60,9 @@ jobs:
           name: rpms7
       - name: Install generated rpms
         run: |
-          yum install -y epel-release
           yum localinstall -y glite-info-provider-ldap-*.rpm
 
-  # XXX BDII dependencies taken from non default repositories
-  # EPEL: glue-schema
+  # XXX dependencies taken from non default repositories
   # msalle' COPR: openldap-servers
   centos8-install:
     name: Install CentOS 8 rpms
@@ -78,6 +75,5 @@ jobs:
           name: rpms8
       - name: Install generated rpms
         run: |
-          yum install -y epel-release
           curl -o /etc/yum.repos.d/msalle-OpenLDAP-centos-stream.repo https://copr.fedorainfracloud.org/coprs/msalle/OpenLDAP/repo/centos-stream/msalle-OpenLDAP-centos-stream.repo
           yum localinstall -y glite-info-provider-ldap-*.rpm
