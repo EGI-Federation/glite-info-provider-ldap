@@ -7,4 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.0] - 2022-09-07
 - Suppress the software and job information (#2) (Laurence Field)
+- Use GitHub Actions to lint, build, and upload packages to GitHub (#5) (Baptiste Grenier)

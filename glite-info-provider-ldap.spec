@@ -4,11 +4,7 @@ Release:	1%{?dist}
 Summary:	LDAP information provider
 Group:		Development/Libraries
 License:	ASL 2.0
-URL:		http://gridinfo.web.cern.ch
-# The source for this package was pulled from upstream's vcs.  Use the
-# following commands to generate the tarball:
-#  svn export http://svnweb.cern.ch/guest/gridinfo/glite-info-provider-ldap/tags/R_1_4_8_1 %{name}-%{version}
-#  tar --gzip -czvf %{name}-%{version}.tar.gz %{name}-%{version} 
+URL:		https://github.com/EGI-Federation/glite-info-provider-ldap
 Source:		%{name}-%{version}.src.tgz
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-build
@@ -19,8 +15,6 @@ Information provider to query LDAP sources and return the result.
 
 %prep
 %setup -q
-#change to the one below if you are building against downloaded tarball from svnweb.cern.ch
-#%setup -q -n trunk.r443
 
 %build
 # Nothing to build
@@ -41,6 +35,10 @@ rm -rf %{buildroot}
 %doc /usr/share/doc/glite-info-provider-ldap/README
 
 %changelog
+
+* Wed Sep 7 2022 Baptiste Grenier <baptiste.grenier@egi.eu> - 1.5.0-1
+- Suppress the software and job information (#2) (Laurence Field)
+- Use GitHub Actions to lint, build, and upload packages to GitHub (#5) (Baptiste Grenier)
 
 * Fri Sep 27 2013 Maria Alandes <maria.alandes.pradillo@cern.ch> - 1.4.8-1
 - BUG #102675: Increase the default max size of LDIF files to 25MB
