@@ -5,7 +5,7 @@ Summary:	LDAP information provider
 Group:		Development/Libraries
 License:	ASL 2.0
 URL:		https://github.com/EGI-Federation/glite-info-provider-ldap
-Source:		%{name}-%{version}.src.tgz
+Source:		%{name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-build
 Requires:       openldap-servers
