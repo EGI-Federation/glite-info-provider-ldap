@@ -21,3 +21,9 @@ make -f Makefile-build-docker deb
 make -f Makefile-build-docker rpm
 ```
 
+## History
+
+This work started under the EGEE project, and was hosted and maintained for a
+long time by CERN.
+This is now hosted here on GitHub, maintained by the BDII community with
+support of members of the EGI Federation.
