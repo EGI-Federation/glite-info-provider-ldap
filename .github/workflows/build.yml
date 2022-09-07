@@ -75,5 +75,7 @@ jobs:
           name: rpms8
       - name: Install generated rpms
         run: |
+          sed -i 's/^mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-Linux-*
+          sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.epel.cloud|g' /etc/yum.repos.d/CentOS-Linux-*
           curl -o /etc/yum.repos.d/msalle-OpenLDAP-centos-stream.repo https://copr.fedorainfracloud.org/coprs/msalle/OpenLDAP/repo/centos-stream/msalle-OpenLDAP-centos-stream.repo
           yum localinstall -y glite-info-provider-ldap-*.rpm
