@@ -95,8 +95,8 @@ jobs:
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        fail_on_unmatched_files: true
         with:
+          fail_on_unmatched_files: true
           files: |
             ${{ steps.package_name_centos7.outputs.rpm_path }}
             ${{ steps.package_name_centos7.outputs.src_path }}
@@ -120,8 +120,8 @@ jobs:
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        fail_on_unmatched_files: true
         with:
+          fail_on_unmatched_files: true
           files: |
             ${{ steps.package_name_centos8.outputs.rpm_path }}
             ${{ steps.package_name_centos8.outputs.src_path }}
