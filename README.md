@@ -53,6 +53,7 @@ The DEB will be available into the `build/` directory.
 - Prepare a PR with
   - Updating version and changelog in `glite-info-provider-ldap.spec`
   - Updating version and changelog in `debian/changelog`
+  - Updating version and changelog in `CHANGELOG`
   - Updating authors in `AUTHORS`
 - Once the PR has been merged, publish a new release using GitHub web interface
   - Packages will be built using GitHub Actions and attached to the release page
