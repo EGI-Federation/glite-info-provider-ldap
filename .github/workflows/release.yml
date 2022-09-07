@@ -58,27 +58,9 @@ jobs:
             build/RPMS/noarch/glite-info-provider-ldap-*-1.el8.noarch.rpm
             build/SRPMS/glite-info-provider-ldap-*-1.el8.src.rpm
 
-  create-release:
-    name: Create release
-    needs: [centos7, centos8]
-    runs-on: ubuntu-latest
-    outputs:
-      upload_url: ${{ steps.create_release.outputs.upload_url }}
-    steps:
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
-
   release7:
     name: Upload CentOS 7 release artefacts
-    needs: create-release
+    needs: centos7
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v3
@@ -103,7 +85,7 @@ jobs:
 
   release8:
     name: Upload CentOS 8 release artefacts
-    needs: create-release
+    needs: centos8
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v3
