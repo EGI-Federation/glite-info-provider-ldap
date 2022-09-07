@@ -1,3 +1,10 @@
+glite-info-provider-ldap (1.5.0-1) UNRELEASED; urgency=low
+
+  * Suppress the software and job information (#2) (Laurence Field)
+  * Use GitHub Actions to lint, build, and upload packages to GitHub (#5) (Baptiste Grenier)
+
+ -- Baptiste Grenier <baptiste.grenier@egi.eu>  Wed, 07 Sep 2022 16:25:00 +0100
+
 glite-info-provider-ldap (1.4.8-1) UNRELEASED; urgency=low
 
   * New upstream release
