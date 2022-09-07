@@ -22,11 +22,11 @@ install:
 
 dist:
 	@mkdir -p  $(build)/$(NAME)-$(VERSION)/
-	rsync -HaS --exclude ".svn" --exclude "$(build)" * $(build)/$(NAME)-$(VERSION)/
-	cd $(build); tar --gzip -cf $(NAME)-$(VERSION).src.tgz $(NAME)-$(VERSION)/; cd -
+	rsync -HaS --exclude ".git" --exclude "$(build)" * $(build)/$(NAME)-$(VERSION)/
+	cd $(build); tar --gzip -cf $(NAME)-$(VERSION).tar.gz $(NAME)-$(VERSION)/; cd -
 
 sources: dist
-	cp $(build)/$(NAME)-$(VERSION).src.tgz .
+	cp $(build)/$(NAME)-$(VERSION).tar.gz .
 
 deb: dist
 	cd $(build)/$(NAME)-$(VERSION); dpkg-buildpackage -us -uc; cd -
@@ -37,16 +37,17 @@ prepare: dist
 	@mkdir -p  $(build)/SPECS/
 	@mkdir -p  $(build)/SOURCES/
 	@mkdir -p  $(build)/BUILD/
-	cp $(build)/$(NAME)-$(VERSION).src.tgz $(build)/SOURCES 
+	cp $(build)/$(NAME)-$(VERSION).tar.gz $(build)/SOURCES
+	cp $(NAME).spec $(build)/SPECS
 
 srpm: prepare
-	@rpmbuild -bs --define="dist ${dist}" --define='_topdir ${build}' $(NAME).spec 
+	rpmbuild -bs --define="dist ${dist}" --define='_topdir ${build}' $(build)/SPECS/$(NAME).spec
 
 rpm: srpm
-	@rpmbuild --rebuild  --define='_topdir ${build} ' $(build)/SRPMS/$(NAME)-$(VERSION)-$(RELEASE)${dist}.src.rpm 
+	rpmbuild --rebuild  --define='_topdir ${build}' --define="dist ${dist}" $(build)/SRPMS/$(NAME)-$(VERSION)-$(RELEASE)${dist}.src.rpm
 
 clean:
-	rm -f *~ $(NAME)-$(VERSION).src.tgz
+	rm -f *~ $(NAME)-$(VERSION).tar.gz
 	rm -rf $(build)
 
-.PHONY: dist srpm rpm deb sources clean test
+.PHONY: dist srpm rpm sources clean
