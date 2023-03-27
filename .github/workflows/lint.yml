@@ -28,8 +28,6 @@ jobs:
           MARKDOWN_CONFIG_FILE: .markdownlint.json
           # Only check new or edited files
           VALIDATE_ALL_CODEBASE: false
-          # Debug super-linter
-          ACTIONS_RUNNER_DEBUG: false
           # Fail on errors
           DISABLE_ERRORS: false
           # shellcheck conf
