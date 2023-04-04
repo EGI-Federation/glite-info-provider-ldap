@@ -8,6 +8,13 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [1.6.0] - 2023-04-04
+
+### Changed
+
+- Build and release using CentOS 7, AlmaLinux 8 and 9. (#12) (Baptiste Grenier)
+- Sync repo with other bdii-related ones. (#12) (Baptiste Grenier)
+
 ## [1.5.0] - 2022-09-07
 - Suppress the software and job information (#2) (Laurence Field)
 - Use GitHub Actions to lint, build, and upload packages to GitHub (#5) (Baptiste Grenier)

@@ -1,3 +1,10 @@
+glite-info-provider-ldap (1.6.0-1) UNRELEASED; urgency=low
+
+  * Build and release using CentOS 7, AlmaLinux 8 and 9. (#12) (Baptiste Grenier)
+  * Sync repo with other bdii-related ones. (#12) (Baptiste Grenier)
+
+ -- Baptiste Grenier <baptiste.grenier@egi.eu>  Tue, 04 Apr 2023 09:24:00 +0100
+
 glite-info-provider-ldap (1.5.0-1) UNRELEASED; urgency=low
 
   * Suppress the software and job information (#2) (Laurence Field)
