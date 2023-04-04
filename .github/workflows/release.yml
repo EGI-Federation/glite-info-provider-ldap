@@ -81,6 +81,8 @@ jobs:
 
   release7:
     name: Upload CentOS 7 release artefacts
+    permissions:
+      contents: write # to upload release asset (softprops/action-gh-release)
     needs: centos7
     runs-on: ubuntu-latest
     steps:
@@ -106,6 +108,8 @@ jobs:
 
   release8:
     name: Upload AlmaLinux 8 release artefacts
+    permissions:
+      contents: write # to upload release asset (softprops/action-gh-release)
     needs: almalinux8
     runs-on: ubuntu-latest
     steps:
@@ -131,6 +135,8 @@ jobs:
 
   release9:
     name: Upload AlmaLinux 9 release artefacts
+    permissions:
+      contents: write # to upload release asset (softprops/action-gh-release)
     needs: almalinux9
     runs-on: ubuntu-latest
     steps:

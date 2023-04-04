@@ -1,5 +1,5 @@
 Name:          glite-info-provider-ldap
-Version:       1.5.0
+Version:       1.6.0
 Release:       1%{?dist}
 Summary:       LDAP information provider
 Group:         Development/Libraries
@@ -40,6 +40,10 @@ rm -rf %{buildroot}
 %license /usr/share/licenses/%{name}-%{version}/LICENSE.txt
 
 %changelog
+
+* Tue Apr 4 2023 Baptiste Grenier <baptiste.grenier@egi.eu> - 1.6.0-1
+- Build and release using CentOS 7, AlmaLinux 8 and 9. (#12) (Baptiste Grenier)
+- Sync repo with other bdii-related ones. (#12) (Baptiste Grenier)
 
 * Wed Sep 7 2022 Baptiste Grenier <baptiste.grenier@egi.eu> - 1.5.0-1
 - Suppress the software and job information (#2) (Laurence Field)
