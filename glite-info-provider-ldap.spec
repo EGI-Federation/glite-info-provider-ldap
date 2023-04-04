@@ -1,17 +1,19 @@
-Name:		glite-info-provider-ldap
-Version:	1.5.0
-Release:	1%{?dist}
-Summary:	LDAP information provider
-Group:		Development/Libraries
-License:	ASL 2.0
-URL:		https://github.com/EGI-Federation/glite-info-provider-ldap
-Source:		%{name}-%{version}.tar.gz
-BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-build
-Requires:       openldap-servers
+Name:          glite-info-provider-ldap
+Version:       1.5.0
+Release:       1%{?dist}
+Summary:       LDAP information provider
+Group:         Development/Libraries
+License:       ASL 2.0
+URL:           https://github.com/EGI-Federation/glite-info-provider-ldap
+Source:        %{name}-%{version}.tar.gz
+BuildArch:     noarch
+BuildRoot:     %{_tmppath}/%{name}-%{version}-build
+BuildRequires: rsync
+BuildRequires: make
+Requires:      openldap-servers
 
 %description
-Information provider to query LDAP sources and return the result. 
+Information provider to query LDAP sources and return the result.
 
 %prep
 %setup -q
@@ -29,10 +31,13 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root,-)
 /usr/libexec/glite-info-provider-ldap
-%attr(-, ldap, ldap) /var/lib/bdii/gip/tmp/gip/
-%attr(-, ldap, ldap) /var/lib/bdii/gip/tmp/gip/log/
-%attr(-, ldap, ldap) /var/lib/bdii/gip/cache/gip/
-%doc /usr/share/doc/glite-info-provider-ldap/README
+%attr(-, ldap, ldap) %{_sharedstatedir}/bdii/gip/tmp/gip/
+%attr(-, ldap, ldap) %{_sharedstatedir}/bdii/gip/tmp/gip/log/
+%attr(-, ldap, ldap) %{_sharedstatedir}/bdii/gip/cache/gip/
+%doc %{_docdir}/%{name}-%{version}/README.md
+%doc %{_docdir}/%{name}-%{version}/AUTHORS.md
+%license /usr/share/licenses/%{name}-%{version}/COPYRIGHT
+%license /usr/share/licenses/%{name}-%{version}/LICENSE.txt
 
 %changelog
 
