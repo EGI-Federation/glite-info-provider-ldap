@@ -8,6 +8,12 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [1.6.1] - 2024-06-28
+
+### Added
+
+- Add missing perl dependencies for EL9. (#16) (Baptiste Grenier)
+
 ## [1.6.0] - 2023-04-04
 
 ### Changed
