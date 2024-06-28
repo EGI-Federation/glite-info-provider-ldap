@@ -83,6 +83,7 @@ jobs:
           name: rpms8
       - name: Install generated RPMs
         run: |
+          yum install -y dnf-plugins-core
           dnf config-manager --set-enabled powertools
           yum localinstall -y glite-info-provider-ldap-*.el8.noarch.rpm
 
