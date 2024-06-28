@@ -1,5 +1,5 @@
 Name:          glite-info-provider-ldap
-Version:       1.6.0
+Version:       1.6.1
 Release:       1%{?dist}
 Summary:       LDAP information provider
 Group:         Development/Libraries
@@ -11,6 +11,10 @@ BuildRoot:     %{_tmppath}/%{name}-%{version}-build
 BuildRequires: rsync
 BuildRequires: make
 Requires:      openldap-servers
+%if 0%{?rhel} >= 9
+Requires: perl-File-Copy
+Requires: perl-libwww-perl
+%endif
 
 %description
 Information provider to query LDAP sources and return the result.
@@ -40,6 +44,8 @@ rm -rf %{buildroot}
 %license /usr/share/licenses/%{name}-%{version}/LICENSE.txt
 
 %changelog
+* Tue Apr 28 2024 Baptiste Grenier <baptiste.grenier@egi.eu> - 1.6.1-1
+- Add missing perl dependencies for EL9. (#16) (Baptiste Grenier)
 
 * Tue Apr 4 2023 Baptiste Grenier <baptiste.grenier@egi.eu> - 1.6.0-1
 - Build and release using CentOS 7, AlmaLinux 8 and 9. (#12) (Baptiste Grenier)
