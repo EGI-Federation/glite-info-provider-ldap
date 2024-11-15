@@ -49,7 +49,7 @@ jobs:
           yum localinstall -y glite-info-provider-ldap-*.el8.noarch.rpm
       - name: Call script, check usage is shown
         run: |
-          /usr/libexec/glite-info-provider-ldap -h 2>&1 | grep -q '^Usage'
+          /usr/libexec/glite-info-provider-ldap -h 2>&1 | grep -q '^Usage: /usr/libexec/glite-info-provider-ldap'
 
   # XXX Dependencies from EPEL: openldap-servers
   install-almalinux9:
@@ -67,4 +67,4 @@ jobs:
           yum localinstall -y glite-info-provider-ldap-*.el9.noarch.rpm
       - name: Call script, check usage is shown
         run: |
-          /usr/libexec/glite-info-provider-ldap -h 2>&1 | grep -q '^Usage'
+          /usr/libexec/glite-info-provider-ldap -h 2>&1 | grep -q '^Usage: /usr/libexec/glite-info-provider-ldap'
