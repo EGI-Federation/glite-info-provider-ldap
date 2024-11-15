@@ -8,6 +8,12 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [1.7.1] - 2024-11-15
+
+### Added
+
+- Drop support for RHEL7. (#21) (Baptiste Grenier)
+
 ## [1.6.2] - 2024-11-15
 
 ### Added

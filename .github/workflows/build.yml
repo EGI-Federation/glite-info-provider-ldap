@@ -5,30 +5,6 @@ on:
   pull_request:
 
 jobs:
-  # XXX done outside of the matrix due to different container name
-  build-centos7:
-    name: Build CentOS 7 RPMs
-    runs-on: ubuntu-latest
-    container: quay.io/centos/centos:7
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Install build requisites
-        run: |
-          yum install -y rpm-build yum-utils rpmlint
-          yum-builddep -y glite-info-provider-ldap.spec
-      - name: build rpm
-        run: |
-          make clean rpm
-          rpmlint --file .rpmlint.ini build/RPMS/noarch/*.el7.noarch.rpm
-      - name: Upload RPMs
-        uses: actions/upload-artifact@v3
-        with:
-          name: rpms7
-          path: |
-            build/RPMS/noarch/glite-info-provider-ldap-*.el7.noarch.rpm
-
   # Use a matrix for AlmaLinux versions
   build-almalinux:
     strategy:
@@ -55,21 +31,6 @@ jobs:
           name: rpms${{ matrix.almalinux-version }}
           path: |
             build/RPMS/noarch/glite-info-provider-ldap-*.el${{ matrix.almalinux-version }}.noarch.rpm
-
-  # XXX: From EPEL: openldap-servers
-  install-centos7:
-    name: Install CentOS 7 RPMs
-    needs: build-centos7
-    runs-on: ubuntu-latest
-    container: quay.io/centos/centos:7
-    steps:
-      - uses: actions/download-artifact@v3
-        with:
-          name: rpms7
-      - name: Install generated RPMs
-        run: |
-          yum install -y epel-release
-          yum localinstall -y glite-info-provider-ldap-*.el7.noarch.rpm
 
   # XXX: From PowerTools: openldap-servers
   install-almalinux8:
