@@ -46,8 +46,6 @@ rm -rf %{buildroot}
 %changelog
 * Thu Nov 15 2024 baptiste grenier <baptiste.grenier@egi.eu> - 1.7.1-1
 - Drop support for RHEL7. (#21) (baptiste grenier)
-
-* Thu Nov 15 2024 baptiste grenier <baptiste.grenier@egi.eu> - 1.6.2-1
 - Add missing perl dependencies for el8. (#21) (baptiste grenier)
 
 * Tue Apr 28 2024 baptiste grenier <baptiste.grenier@egi.eu> - 1.6.1-1

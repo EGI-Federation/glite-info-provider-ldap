@@ -13,11 +13,6 @@ and this project adheres to
 ### Added
 
 - Drop support for RHEL7. (#21) (Baptiste Grenier)
-
-## [1.6.2] - 2024-11-15
-
-### Added
-
 - Add missing perl dependencies for EL8. (#21) (Baptiste Grenier)
 
 ## [1.6.1] - 2024-06-28
