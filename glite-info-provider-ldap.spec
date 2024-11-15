@@ -48,7 +48,7 @@ rm -rf %{buildroot}
 * Thu Nov 15 2024 baptiste grenier <baptiste.grenier@egi.eu> - 1.6.2-1
 - Add missing perl dependencies for el8. (#21) (baptiste grenier)
 
-* tue Apr 28 2024 baptiste grenier <baptiste.grenier@egi.eu> - 1.6.1-1
+* Tue Apr 28 2024 baptiste grenier <baptiste.grenier@egi.eu> - 1.6.1-1
 - Add missing perl dependencies for el9. (#16) (baptiste grenier)
 
 * Tue Apr 4 2023 Baptiste Grenier <baptiste.grenier@egi.eu> - 1.6.0-1
