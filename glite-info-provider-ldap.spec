@@ -11,8 +11,10 @@ BuildRoot:     %{_tmppath}/%{name}-%{version}-build
 BuildRequires: rsync
 BuildRequires: make
 Requires:      openldap-servers
-Requires:      perl-File-Copy
 Requires:      perl-libwww-perl
+%if 0%{?rhel} >= 9
+Requires:      perl-File-Copy
+%endif
 
 %description
 Information provider to query LDAP sources and return the result.
