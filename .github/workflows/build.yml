@@ -47,6 +47,9 @@ jobs:
           yum install -y dnf-plugins-core
           dnf config-manager --set-enabled powertools
           yum localinstall -y glite-info-provider-ldap-*.el8.noarch.rpm
+      - name: Call script
+        run: |
+          /usr/libexec/glite-info-provider-ldap
 
   # XXX Dependencies from EPEL: openldap-servers
   install-almalinux9:
@@ -62,3 +65,6 @@ jobs:
         run: |
           yum install -y epel-release
           yum localinstall -y glite-info-provider-ldap-*.el9.noarch.rpm
+      - name: Call script
+        run: |
+          /usr/libexec/glite-info-provider-ldap
